@@ -1,0 +1,231 @@
+button {
+    border-radius: 5px;
+}
+
+div.week-summary {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* TOP SUMMARY PANEL */
+
+/* <--------------- LEFT PORTION */
+
+div.week-summary section.week-panel {
+    display: flex;
+    box-sizing: border-box;
+    height: 350px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+div.week-summary section.week-panel article.day {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+div.week-summary section.week-panel article.day h3 {
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid black;
+    margin-right: -1px;
+    padding: 0 10px;
+}
+
+div.week-summary section.week-panel article.day ul.meals {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 300px;
+    margin: 0;
+    border-right: 1px solid black;
+    margin-right: -1px;
+    padding: 0px 20px
+}
+
+div.week-summary section.week-panel article.day ul li {
+    text-align: center;
+    list-style: none;
+}
+
+/* RIGHT POTION ---------------> */
+
+div.week-summary section.summary-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    height: 350px;
+    margin: 20px;
+    border: 1px solid black;
+}
+
+div.week-summary section.summary-panel article.daily-summary {
+    display: flex;
+    flex-wrap: wrap;
+    width: 350px;
+    justify-content: center;
+}
+
+div.week-summary section.summary-panel article.daily-summary h2 {
+    flex-basis: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+div.week-summary section.summary-panel article.daily-summary span {
+    padding: 0 10px;
+}
+
+div.week-summary section.summary-panel article.weekly-summary {
+    display: flex;
+    flex-wrap: wrap;
+    width: 350px;
+    justify-content: center;
+}
+
+div.week-summary section.summary-panel article.weekly-summary h2 {
+    flex-basis: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+div.week-summary section.summary-panel article.weekly-summary span {
+    padding: 0 10px;
+}
+
+/* BOTTOM CONFIGURATION PANEL */
+
+/* <--------------- LEFT PORTION */
+
+div.meal-configuration {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+div.meal-configuration section.day-panel {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: max-content;
+    box-sizing: border-box;
+    margin: 20px;
+    border: 1px solid black;
+}
+
+div.meal-configuration section.day-panel ul {
+    padding: 0;
+    margin: 0;
+}
+
+div.meal-configuration section.day-panel ul li {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+div.meal-configuration section.day-panel ul li img {
+    height: 100px;
+    align-self: center;
+}
+
+div.meal-configuration section.day-panel ul li span h4 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+div.meal-configuration section.day-panel ul li span table td {
+    text-align: center;
+    width: 50px;
+}
+
+div.meal-configuration section.day-panel ul li span table th {
+    text-align: center;
+    width: 50px;
+}
+
+/* RIGHT POTION ---------------> */
+
+div.meal-configuration section.meal-panel {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* FILTER CONFIGURATION */
+
+div.meal-configuration section.meal-panel article.filters {
+    display: flex;
+    justify-content: center;
+}
+
+div.meal-configuration section.meal-panel article.filters label {
+    margin: 0 5px;
+}
+
+div.meal-configuration section.meal-panel article.filters input {
+    margin: 0 5px;
+}
+
+/* FILTER RESULTS */
+
+div.meal-configuration section.meal-panel article.filter-results {
+    width: 1060px;
+}
+
+div.meal-configuration section.meal-panel article.filter-results ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+div.meal-configuration section.meal-panel article.filter-results ul li {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    margin: 2px;
+}
+
+div.meal-configuration section.meal-panel article.filter-results ul li img {
+    height: 100px;
+    align-self: center;
+}
+
+div.meal-configuration section.meal-panel article.filter-results ul li span h4 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+div.meal-configuration section.meal-panel article.filter-results ul li span table td {
+    text-align: center;
+    width: 50px;
+}
+
+div.meal-configuration section.meal-panel article.filter-results ul li span table th {
+    text-align: center;
+    width: 50px;
+}
+
+/* RANDOMIZE BUTTONS */
+
+div.meal-configuration section.meal-panel article.randomize-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+div.meal-configuration section.meal-panel article.randomize-buttons button {
+    padding: 2px 20px;
+    margin: 0 20px;
+}

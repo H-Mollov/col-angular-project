@@ -1,0 +1,31 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form span.main-information {
+    display: flex;
+    flex-direction: column;
+}
+
+form span.calorie-information {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    margin: 10px 0;
+}
+
+input {
+    width: 500px;
+    align-self: center;
+}
+
+textarea {
+    width: 500px;
+    align-self: center;
+}

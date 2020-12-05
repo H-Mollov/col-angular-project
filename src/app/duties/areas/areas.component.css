@@ -1,0 +1,46 @@
+section.areas {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section.areas ul {
+    align-self: center;
+    padding: 0;
+}
+
+section.areas a {
+    align-self: center;
+    text-decoration: none;
+    background-color: paleturquoise;
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: black;
+}
+
+section.areas a:hover {
+    background-color: yellowgreen;
+}
+
+section.areas ul li {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0px;
+}
+
+section.areas ul li h4 {
+    align-self: center;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+section.areas ul li p {
+    align-self: center;
+    margin: 0;
+    padding: 10px 20px;
+}

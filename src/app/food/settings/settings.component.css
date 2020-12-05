@@ -1,0 +1,76 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+label {
+    font-size: 20px;
+    padding: 5px 0;
+}
+
+form blockquote {
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* TOP SECTION */
+
+form section.calorie-intake-settings {
+    display: flex;
+    flex-direction: column;
+}
+
+form section.calorie-intake-settings input {
+    width: 500px;
+    align-self: center;
+}
+
+form section.calorie-intake-settings select {
+    width: 500px;
+    align-self: center;
+}
+
+form section.calorie-intake-settings div.recommended-calorie-intake {
+    align-self: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin: 10px 0;
+    width: fit-content;
+}
+
+/* BOTTOM SECTION */
+
+form section.current-intake-settings {
+    display: flex;
+    flex-direction: column;
+}
+
+form section.current-intake-settings input {
+    width: 500px;
+    align-self: center;
+}
+
+form section.current-intake-settings select {
+    width: 500px;
+    align-self: center;
+}
+
+form section.current-intake-settings span.actions {
+    margin: 20px;
+}
+
+form section.current-intake-settings span.actions a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 20px;
+    background-color: paleturquoise;
+    border-radius: 5px;
+    margin: 0 20px;
+}
+
+form section.current-intake-settings span.actions a:hover {
+    background-color: yellowgreen;
+}

@@ -1,0 +1,46 @@
+<div>
+    <form action="/food/settings" class="settings" method="POST">
+        <h2>Food Intake Settings</h2>
+        <section class="calorie-intake-settings">
+            <label for="currentKg">Current Weight:</label>
+            <input type="number" min="0" name="currentKg" placeholder="kg">
+            <label for="targetKg">Target Weight:</label>
+            <input type="number" min="0" name="targetKg" placeholder="kg">
+            <label for="exerciseLevel">Exercise Level</label>
+            <select name="exerciseLevel">
+                <option value="noExercise">No exercise (sedantary job)</option>
+                <option value="lightExercise">1-2 times per week (sedantary job)</option>
+                <option value="moderateExercise">3-4 times per week (active job)</option>
+                <option value="heavyExercise">4+ times per week (active job)</option>
+            </select>
+            <blockquote>
+                Most common type of exercise is light or moderate. For measure, olympic athletes can be considered to
+                exercise heavy!
+            </blockquote>
+            <a href="">Calculate</a>
+            <div class="recommended-calorie-intake">
+                <h4>Recommended Calorie Intake</h4>
+                <p>3400kCal</p>
+            </div>
+            <blockquote>
+                For gaining or loosing weight, start towards the recommended calorie intake, by adding or substracting
+                100
+                kCal per week.
+            </blockquote>
+        </section>
+        <section class="current-intake-settings">
+            <label for="currentCalories">Current Calorie Intake</label>
+            <input type="number" name="currentCallories" placeholder="kCal" required>
+            <label for="mealsPerDay">Meals Per Day</label>
+            <input type="number" max="6" required>
+            <label for="mealCalories">Calories Per Meal:</label>
+            <input type="number" name="mealCalories">
+            <label for="minProtein">Minimum Protein Per Meal</label>
+            <input type="number" name="minProtein">
+            <span class="actions">
+                <a href="">Save</a>
+                <a href="">Cancel</a>
+            </span>
+        </section>
+    </form>
+</div>

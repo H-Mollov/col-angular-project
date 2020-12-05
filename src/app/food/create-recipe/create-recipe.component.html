@@ -1,0 +1,20 @@
+<form action="/food/recipes/create" method="post">
+    <span class="main-information">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Ex: Brownie">
+        <label for="description">Description</label>
+        <textarea name="description" cols="30" rows="10">Short description, preparation, etc...</textarea>
+        <label for="imageUrl">Image URL</label>
+        <input type="url" name="imageUrl" placeholder="https://">
+    </span>
+    <span class="calorie-information">
+        <label for="carbohydrates">Carbohydrates</label>
+        <input type="text" name="carbohydrates" placeholder="grams">
+        <label for="fats">Fats</label>
+        <input type="text" name="fats" placeholder="grams">
+        <label for="protein">Protein</label>
+        <input type="text" name="protein" placeholder="grams">
+        <label for="calories">Calories</label>
+        <input type="text" name="calories" placeholder="kCal">
+    </span>
+</form>

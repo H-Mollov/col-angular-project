@@ -1,0 +1,38 @@
+img {
+    height: 150px;
+    margin: 0px 20px;
+}
+
+section.checklist {
+    display: flex;
+    justify-content: center;
+}
+section.checklist form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.checklist ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+}
+
+section.checklist ul li {
+    list-style: none;
+}
+
+section.checklist ul li input {
+    align-self: center;
+}
+
+section.checklist ul li label {
+    align-self: center;
+}
+
+button {
+    width: 150px;
+    border-radius: 5px;
+}

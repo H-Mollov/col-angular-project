@@ -1,0 +1,85 @@
+main section.summary {
+    display: flex;
+    justify-content: center;
+}
+
+main section.summary span.rent {
+    text-align: center;
+    align-self: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 50px 100px;
+    margin-right: -1px;
+}
+
+main section.summary span.consumables {
+    text-align: center;
+    align-self: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px 100px;
+}
+
+main section.summary span.consumables ul {
+    padding: 0;
+}
+
+main section.summary span.consumables ul li {
+    list-style: none;
+    text-align: center;
+}
+
+main section.summary span.total {
+    text-align: center;
+    align-self: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 50px 100px;
+    margin-left: -1px;
+}
+
+main section.individual {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 1200px;
+    padding: 20px;
+    margin: 20px;
+}
+
+main section.individual div.user {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+main section.individual div.user img {
+    height: 150px;
+    margin: 5px;
+    border-right: 1px solid black;
+}
+
+main section.individual div.user span.bills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main section.individual div.user span.bills ul {
+    padding: 0;
+    width: 200px;
+    margin-left: 50px;
+}
+
+main section.individual div.user span.bills ul li {
+    color: firebrick;
+}
+
+main section.individual div.user span.bills ul li:hover {
+    color: green;
+    text-decoration: line-through;
+}

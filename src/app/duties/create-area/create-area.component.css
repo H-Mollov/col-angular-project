@@ -1,0 +1,27 @@
+section.create-area form{
+    display: flex;
+    flex-direction: column;
+}
+
+section.create-area form input, 
+section.create-area form label,
+section.create-area form select {
+    align-self: center;
+}
+
+section.create-area form label {
+    font-size: 16px;
+    padding: 5px 0px;
+}
+
+section.create-area form input,
+section.create-area form select {
+    width: 300px;
+}
+
+section.create-area form button {
+    width: 100px;
+    margin-top: 20px;
+    align-self: center;
+    border-radius: 5px;
+}

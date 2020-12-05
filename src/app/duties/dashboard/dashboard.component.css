@@ -1,0 +1,37 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main div.person {
+    align-self: center;
+    display: flex;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 20px;
+    width: 400px;
+}
+
+main div.person section.user {
+    border-right: 1px solid black;
+    padding-right: 5px;
+}
+
+main div.person section.user p {
+    text-align: center;
+    margin: 0;
+}
+
+main div.person section.user img {
+    height: 100px;
+}
+
+main div.person section.checklist {
+    display: flex;
+    justify-content: center;
+}
+
+main div.person section.checklist ul {
+    align-self: center;
+}

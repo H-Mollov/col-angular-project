@@ -1,0 +1,55 @@
+<header>
+    <div class="logo-container">
+        <img src="../../../assets/Logo.jpg" alt="The Logo should be here :?">
+    </div>
+    <div class="center-container">
+        <span class="top-baner">
+            <img src="../../../assets/Baner.jpg" alt="Some Baner should be here :?">
+        </span>
+        <nav *ngIf="isLogged">
+            <ul>
+                <li><a (click)="displayFoodHandler()">Food</a></li>
+                <li><a (click)="displayDutiesHandler()">Duites</a></li>
+                <li><a (click)="displayBillsHandler()">Bills</a></li>
+                <!-- <li><a (click)="displayMenuHandler()">P&A</a></li> -->
+            </ul>
+        </nav>
+    </div>
+    <div class="profile-container">
+        <img src="../../../assets/UserProfileDefaultPicture.jpg" alt="Some User Profile picture should be here :?" *ngIf="isLogged">
+        <img src="../../../assets/UnauthenticatedUserProfilePicture.jpg" alt="Some Unknown User Profile Picture should be here :?" *ngIf="!isLogged">
+        <span class="user-profile-navigation" *ngIf="isLogged">
+            <a routerLink="/user/profile">Profile</a>
+            <a routerLink="/user/settings">Settings</a>
+            <a routerLink="/user/messages">Messages</a>
+        </span>
+        <span class="user-authentication">
+            <a routerLink="/user/login" *ngIf="!isLogged">Login</a>
+            <a routerLink="/user/register" *ngIf="!isLogged">Register</a>
+            <a routerLink="/user/logout" *ngIf="isLogged">-Logout-</a>
+        </span>
+    </div>
+</header>
+<div class="sub-menu" *ngIf="isLogged">
+    <ul class="sub-menu-food" [style]="displayFoodMenu">
+        <li><a routerLink="/food/dashboard">Dashboard</a></li>
+        <li><a routerLink="/food/recipes">Recipes</a></li>
+        <li><a routerLink="/food/week-menu">Week Menu</a></li>
+        <li><a routerLink="/food/settings">Settings</a></li>
+    </ul>
+    <ul class="sub-menu-duties" [style]="displayDutiesMenu">
+        <li><a routerLink="/duties/dashboard">Dashboard</a></li>
+        <li><a routerLink="/duties/areas">Areas</a></li>
+        <li><a routerLink="/duties/checklist">Checklist</a></li>
+    </ul>
+    <ul class="sub-menu-bills" [style]="displayBillsMenu">
+        <li><a routerLink="/bills/dashboard">Dashboard</a></li>
+        <li><a routerLink="/bills/list">List</a></li>
+        <li><a routerLink="/bills/pay">Checklist</a></li>
+    </ul>
+    <!-- <ul class="sub-menu-pna" [style]="displayMenu">
+        <li><a routerLink="/bills/dashboard">Dashboard</a></li>
+        <li><a routerLink="/bills/achievements">Achievements</a></li>
+        <li><a routerLink="/bills/penalties">Penalties</a></li>
+    </ul> -->
+</div>
