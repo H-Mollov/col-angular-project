@@ -1,15 +1,16 @@
 <main>
-    <form action="/user/login" class="login-form" method="POST">
+    <form #f="ngForm" class="login-form" (ngSubmit)="formHandler(f.value)">
         <span class="username">
             <label for="username">Username:</label>
-            <input type="text" id="username">
-            <p>Username is required!</p>
+            <input #username="ngModel" type="text" id="username" name="username" ngModel required [class.input-error]="username.touched && !!username.errors">
+            <p *ngIf="username.touched && !!username.errors">Username is required!</p>
         </span>
         <span class="password">
             <label for="password">Password:</label>
-            <input type="password" id="password">
-            <p>Password is required!</p>
-            <p>Wrong username or password!</p>
+            <input #password="ngModel" type="password" id="password" name="password" ngModel required [class.input-error]="password.touched && !!password.errors">
+            <p *ngIf="password.touched && !!password.errors">Password is required!</p>
+            <p *ngIf="errorMessage.length > 0">{{errorMessage}}</p>
         </span>
+        <button [disabled]="!!password.errors || username.errors">Login</button>
     </form>
 </main>

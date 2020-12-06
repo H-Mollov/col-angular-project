@@ -17,6 +17,7 @@ import { BillsModule } from './bills/bills.module'
 import { HomeComponent } from './home/home.component';
 
 import { UserModule } from './user/user.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,11 +27,13 @@ import { UserModule } from './user/user.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     CoreModule,
     FoodModule,
     DutiesModule,
     BillsModule,
-    UserModule
+    UserModule,
+    
   ],
   providers: [
 

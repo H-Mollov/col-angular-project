@@ -1,21 +1,20 @@
 <main>
-    <form action="/user/register" class="register-form">
+    <form #f="ngForm" class="register-form" (ngSubmit)="formHandler(f.value)">
         <span class="username">
             <label for="username">Username:</label>
-            <input type="text" id="username">
-            <p>Username is required!</p>
-            <p>Username already exists!</p>
+            <input #username="ngModel" type="text" id="username" name="username" ngModel required [class.input-error]="username.touched && !!username.errors">
+            <p *ngIf="username.touched && !!username.errors">Username is required!</p>
         </span>
         <span class="password">
             <label for="password">Password:</label>
-            <input type="password" id="password">
-            <p>Password is required!</p>
-            <p>Password should be at least 8 characters!</p>
+            <input #password="ngModel" type="password" id="password" name="password" ngModel required [class.input-error]="password.touched && !!password.errors">
+            <p *ngIf="password.touched && !!password.errors">Password is required!</p>
         </span>
         <span class="repeat-password">
             <label for="repeatPassword">Re-Password:</label>
-            <input type="password" id="repeatPassword">
-            <p>Passwords dont match!</p>
+            <input #repeatPassword="ngModel" type="password" id="repeatPassword" name="repeatPassword" ngModel required [class.input-error]="repeatPassword.touched && !!repeatPassword.errors">
+            <p *ngIf="password !== repeatPassword && repeatPassword.touched">Passwords dont match!</p>
         </span>
+        <button>Register</button>
     </form>
 </main>

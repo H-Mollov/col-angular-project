@@ -26,7 +26,11 @@ main form.login-form span label {
     width: 80px;
 }
 
-main form.login-form span input {
+main form.login-form span input:not(input-error) {
+    border-left: 5px solid green;
+}
+
+main form.login-form span input.input-error {
     border-left: 5px solid red;
 }
 

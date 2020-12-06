@@ -12,4 +12,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  formHandler(formData: {username: string, password: string, repeatPassword: string}) {
+    
+  }
 }
