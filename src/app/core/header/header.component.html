@@ -26,7 +26,7 @@
         <span class="user-authentication">
             <a routerLink="/user/login" *ngIf="!isLogged">Login</a>
             <a routerLink="/user/register" *ngIf="!isLogged">Register</a>
-            <a routerLink="/user/logout" *ngIf="isLogged">-Logout-</a>
+            <a *ngIf="isLogged" (click)="logOutHandler()">-Logout-</a>
         </span>
     </div>
 </header>

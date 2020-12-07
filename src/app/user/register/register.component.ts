@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service'
+import { AuthService } from '../../core/auth.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,14 +10,14 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   constructor(
-    private user: UserService,
+    private user: AuthService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
-  formHandler(formData: {username: string, password: string, repeatPassword: string}) {
+  formHandler(formData: {username: string, password: string}) {
     this.user.register(formData).subscribe(
       {
         next: (data) => {

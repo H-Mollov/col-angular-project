@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,11 +13,16 @@ export class HeaderComponent {
   displayDutiesMenu = "display: none";
   displayBillsMenu = "display: none";
 
-  isLogged = false;
+  isLogged = this.authService.isLogged;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
+
+  logOutHandler(): void {
+    this.authService.logout().subscribe(() => this.router.navigate(['user/login']))
+  }
 
   resetMenus(): void {
     this.displayFoodMenu = "display: none";
