@@ -11,6 +11,6 @@
             <p *ngIf="password.touched && !!password.errors">Password is required!</p>
             <p *ngIf="errorMessage.length > 0">{{errorMessage}}</p>
         </span>
-        <button [disabled]="!!password.errors || username.errors">Login</button>
+        <button [disabled]="!!password.errors || !!username.errors">Login</button>
     </form>
 </main>

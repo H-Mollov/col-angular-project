@@ -12,9 +12,10 @@
         </span>
         <span class="repeat-password">
             <label for="repeatPassword">Re-Password:</label>
-            <input #repeatPassword="ngModel" type="password" id="repeatPassword" name="repeatPassword" ngModel required [class.input-error]="repeatPassword.touched && !!repeatPassword.errors">
-            <p *ngIf="password !== repeatPassword && repeatPassword.touched">Passwords dont match!</p>
+            <input #repeatPassword="ngModel" type="password" id="repeatPassword" name="repeatPassword" ngModel required 
+            [class.input-error]="repeatPassword.touched && !!repeatPassword.errors || repeatPassword.touched && repeatPassword.value !== password.value">
+            <p *ngIf="password.value !== repeatPassword.value && repeatPassword.touched">Passwords dont match!</p>
         </span>
-        <button>Register</button>
+        <button [disabled]="!!password.errors || !!repeatPassword.errors || !!username.errors">Register</button>
     </form>
 </main>
