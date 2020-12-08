@@ -14,12 +14,11 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthService {
 
   private _currentUser: BehaviorSubject<any | null> = new BehaviorSubject(undefined);
-  currentUser = this._currentUser.asObservable();
 
   apiUrl: string = environment.apiURL;
   user = environment.endPoint.user;
 
-  isLogged = this.currentUser.pipe(map(user => !!user));
+  isLogged = {};
 
   jsonHeaders = {
     headers: new HttpHeaders({
@@ -33,6 +32,7 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}${this.user.login}`, userData, this.jsonHeaders).pipe(
       tap((user: any) => {
         this._currentUser.next(user);
+        this.isLogged = !!this._currentUser.value;
       }),
     )
   }
@@ -44,15 +44,24 @@ export class AuthService {
   }
 
   logout(): Observable<any> {
-    return this.http.get(`${this.apiUrl}${this.user.logout}`, 
-    {
-      headers: new HttpHeaders({
-        'user-token': this._currentUser.value['user-token']
-      })
-    }).pipe(
-      tap((user: any) => {
-        this._currentUser.next(null);
-        console.log(this._currentUser.value);
+    return this.http.get(`${this.apiUrl}${this.user.logout}`,
+      {
+        headers: new HttpHeaders({
+          'user-token': this._currentUser.value['user-token']
+        })
+      }).pipe(
+        tap((user: any) => {
+          this._currentUser.next(null);
+          this.isLogged = !!this._currentUser.value;
+        })
+      )
+  }
+
+  authenticateUser(): Observable<any> {
+    return this.http.get(`${this.apiUrl}${this.user.validate}${this._currentUser.value['user-token']}`).pipe(
+      tap((isValid: any) => {
+        console.log(isValid);
+        this.isLogged = isValid;
       })
     )
   }

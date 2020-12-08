@@ -9,7 +9,8 @@ export const environment = {
     user: {
       login: 'users/login',
       register: 'users/register',
-      logout: 'users/logout'
+      logout: 'users/logout',
+      validate: 'users/isvalidusertoken/'
     }
   }
 };

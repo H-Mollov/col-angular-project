@@ -13,7 +13,7 @@ export class HeaderComponent {
   displayDutiesMenu = "display: none";
   displayBillsMenu = "display: none";
 
-  isLogged = this.authService.isLogged;
+  isLogged = true;
 
   constructor(
     private router: Router,

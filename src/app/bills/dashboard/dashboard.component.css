@@ -1,3 +1,8 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
 main section.summary {
     display: flex;
     justify-content: center;
@@ -40,6 +45,7 @@ main section.summary span.total {
 
 main section.individual {
     box-sizing: border-box;
+    align-self: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
