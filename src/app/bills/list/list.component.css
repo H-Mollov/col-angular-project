@@ -3,14 +3,176 @@ main {
     justify-content: center;
 }
 
-main ul {
-    padding: 0;
-}
+/* MONTH SELECTOR */
 
-main ul li{
-    list-style: none;
-    margin: 10px 0px;
-    padding: 5px;
+main section.month-selector {
     border: 1px solid black;
     border-radius: 5px;
+}
+
+main section.month-selector ul {
+    padding: 0px;
+}
+
+main section.month-selector ul li {
+    list-style: none;
+    text-align: center;
+
+    padding: 8px 5px;
+    margin: 8px;
+
+    border: 5px ridge black;
+    border-radius: 20px;
+    
+    text-transform: uppercase;
+    background-color: paleturquoise;
+}
+
+main section.month-selector ul li:hover {
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+
+/* MONTH DESCRIPTION */
+
+main section.month-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    box-sizing: border-box;
+
+    border: 1px solid black;
+    border-radius: 20px;
+
+    margin: 0px 60px;
+
+    width: 200px;
+
+    text-align: center;
+}
+
+main section.month-description>h4 {
+    margin: 10px 10px 0 10px;
+    padding: 10px 0 10px 0;
+
+    border: 1px solid black;
+    border-radius: 20px 20px 0 0;
+
+    font-size: 22px;
+    text-decoration: underline;
+}
+
+main section.month-description ul {
+    padding: 0px;
+    text-align: center;
+}
+
+main section.month-description ul li {
+    list-style: none;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    margin: 10px;
+
+    background-color: paleturquoise;
+}
+
+main section.month-description ul li:hover {
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+
+main section.month-description ul li p {
+    margin: 5px 0;
+}
+
+main section.month-description button {
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+main section.month-description div.total {
+    border: 1px solid black;
+    border-radius: 0 0 20px 20px;
+
+    margin: 10px;
+}
+
+main section.month-description div.total h4,
+main section.month-description div.total p{
+    margin: 5px 0 5px 0;
+}
+
+main section.month-description div.total h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+/* --> BILL DESCRIPTION <-- */
+/* MAIN FORM */
+main section.bill-description {
+    display: flex;
+    flex-direction: column;
+    
+    border: 1px solid black;
+    border-radius: 20px;
+
+    width: 400px;
+    height: fit-content;
+}
+
+/* HEADER */
+main section.bill-description h3 {
+    text-align: center;
+    font-size: 25px;
+    margin: 20px 0 10px 0;
+}
+
+/* INSTITUTION*/
+main section.bill-description span.institution {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+main section.bill-description span.institution p {
+    margin: 5px;
+}
+
+/*OWED AMOUNT*/
+main section.bill-description span.owed-amount p {
+    margin: 5px 30px 5px 30px;
+}
+
+main section.bill-description span.owed-amount p.total {
+    float: right;
+}
+
+main section.bill-description span.owed-amount ul {
+    margin: 0px 20px;
+    list-style: square;
+}
+
+/*OWED BY*/
+main section.bill-description span.owed-by p {
+    margin: 5px 30px 5px 30px;
+}
+
+main section.bill-description span.owed-by ul {
+    margin: 0px 20px;
+    list-style: square;
+}
+
+/*BUTTONS*/
+main section.bill-description span.buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+main section.bill-description span.buttons button {
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin: 0 15px 0 15px;
 }
