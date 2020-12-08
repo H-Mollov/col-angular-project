@@ -27,7 +27,7 @@ export class LoginComponent {
     this.user.login(userLogin).subscribe(
       {
         next: (data) => {
-          this.router.navigate([`/`]);
+          this.router.navigate([`/home`]);
         },
         error: (err) => {
           console.error(err);

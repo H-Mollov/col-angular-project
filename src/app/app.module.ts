@@ -18,11 +18,13 @@ import { HomeComponent } from './home/home.component';
 
 import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeGuestComponent } from './home-guest/home-guest.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    HomeGuestComponent
   ],
   imports: [
     BrowserModule,

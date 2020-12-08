@@ -17,13 +17,12 @@ export class AuthenticateGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    this.user.authenticateUser();
-
     const isAuthenticated = this.user.isLogged;
+
     if (isAuthenticated) {
       return true;
     }
-    
+
     return false;
   }
 

@@ -21,19 +21,23 @@ const routes: Routes = [
     },
     {
         path: 'food/recipes',
-        component: RecipesComponent
+        component: RecipesComponent,
+        canActivate: [AuthenticateGuard],
     },
     {
         path: 'food/recipes/create',
-        component: CreateRecipeComponent
+        component: CreateRecipeComponent,
+        canActivate: [AuthenticateGuard],
     },
     {
         path: 'food/settings',
-        component: SettingsComponent
+        component: SettingsComponent,
+        canActivate: [AuthenticateGuard],
     },
     {
         path: 'food/week-menu',
-        component: WeekMenuComponent
+        component: WeekMenuComponent,
+        canActivate: [AuthenticateGuard],
     },
     
 ]

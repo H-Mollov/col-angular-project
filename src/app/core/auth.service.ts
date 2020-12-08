@@ -18,7 +18,7 @@ export class AuthService {
   apiUrl: string = environment.apiURL;
   user = environment.endPoint.user;
 
-  isLogged = {};
+  isLogged = false;
 
   jsonHeaders = {
     headers: new HttpHeaders({
@@ -57,12 +57,12 @@ export class AuthService {
       )
   }
 
-  authenticateUser(): Observable<any> {
-    return this.http.get(`${this.apiUrl}${this.user.validate}${this._currentUser.value['user-token']}`).pipe(
-      tap((isValid: any) => {
-        console.log(isValid);
-        this.isLogged = isValid;
-      })
-    )
-  }
+  // authenticateUser(): Observable<any> {
+  //   return this.http.get(`${this.apiUrl}${this.user.validate}${this._currentUser.value['user-token']}`).pipe(
+  //     tap((isValid: any) => {
+  //       console.log(isValid);
+  //       this.isLogged = isValid;
+  //     })
+  //   )
+  // }
 }

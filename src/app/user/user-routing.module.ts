@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AuthenticateGuard } from '../core/guards/authenticate.guard';
 
 const routes: Routes = [
     {
@@ -17,15 +18,18 @@ const routes: Routes = [
     },
     {
         path: 'user/profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        canActivate: [AuthenticateGuard]
     },
     {
         path: 'user/settings',
-        component: SettingsComponent
+        component: SettingsComponent,
+        canActivate: [AuthenticateGuard]
     },
     {
         path: 'user/messages',
-        component: MessagesComponent
+        component: MessagesComponent,
+        canActivate: [AuthenticateGuard]
     },
 ]
 
