@@ -11,6 +11,9 @@ export const environment = {
       register: 'users/register',
       logout: 'users/logout',
       validate: 'users/isvalidusertoken/'
+    },
+    data: {
+      bills: 'data/bills'
     }
   }
 };

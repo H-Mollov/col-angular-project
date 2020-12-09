@@ -28,6 +28,10 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  get currentUser(): any {
+    return this._currentUser.value;
+  }
+
   login(userData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}${this.user.login}`, userData, this.jsonHeaders).pipe(
       tap((user: any) => {
@@ -56,13 +60,4 @@ export class AuthService {
         })
       )
   }
-
-  // authenticateUser(): Observable<any> {
-  //   return this.http.get(`${this.apiUrl}${this.user.validate}${this._currentUser.value['user-token']}`).pipe(
-  //     tap((isValid: any) => {
-  //       console.log(isValid);
-  //       this.isLogged = isValid;
-  //     })
-  //   )
-  // }
 }

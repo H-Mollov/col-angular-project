@@ -5,6 +5,7 @@ import { ListComponent } from './list/list.component';
 import { PayBillsComponent } from './pay-bills/pay-bills.component';
 
 import { BillsRoutingModule } from './bills-routing.module';
+import { CreateComponent } from './create/create.component';
 
 
 
@@ -12,7 +13,8 @@ import { BillsRoutingModule } from './bills-routing.module';
   declarations: [
     DashboardComponent,
     ListComponent,
-    PayBillsComponent
+    PayBillsComponent,
+    CreateComponent
   ],
   imports: [
     CommonModule,

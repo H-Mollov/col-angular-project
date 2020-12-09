@@ -18,61 +18,34 @@
     <section class="month-description">
         <h4>Bills</h4>
         <ul>
-            <li>
-                <p>Rent</p>
-                <p>125$</p>
-            </li>
-            <li>
-                <p>Electricity</p>
-                <p>8$</p>
-            </li>
-            <li>
-                <p>Water</p>
-                <p>9$</p>
-            </li>
-            <li>
-                <p>Hot Water</p>
-                <p>23$</p>
-            </li>
-            <li>
-                <p>WiFi</p>
-                <p>5,2$</p>
-            </li>
-            <li>
-                <p>Other</p>
-                <p>31$</p>
+            <li *ngFor="let bill of allBills" (click)="showBillDescription(bill.objectId)">
+                <p>{{bill.name}}</p>
+                <p>{{bill.owedAmountTOTAL}}$</p>
             </li>
         </ul>
-        <button>Create New</button>
+        <button routerLink="/bills/create">Create New</button>
         <div class="total">
             <h4>Total</h4>
-            <p>421$</p>
+            <p>{{allBillsTotalAmount}}$</p>
         </div>
     </section>
-    <section class="bill-description">
-        <h3>Студена Вода</h3>
+    <section class="bill-description" [style]="billDescriptionStyle">
+        <h3>{{currentBill.name}}</h3>
         <span class="institution">
-            <p>Софийска Вода</p>
-            <p>Клиентски № 54890403</p>
+            <p>{{currentBill.institution}}</p>
+            <p>{{currentBill.institutionDescription}}</p>
         </span>
         <span class="owed-amount">
             <p>Дължима сума:</p>
             <ul>
-                <li>Софийска Вода1 - 12$</li>
-                <li>Софийска Вода2 - 13$</li>
-                <li>Софийска Вода3 - 23$</li>
-                <li>Софийска Вода4 - 35$</li>
+                <li *ngFor="let entry of cbOwedAmount">{{entry.name}} - {{entry.amount}}$</li>
             </ul>
-            <p class="total">Общо: 1233$</p>
+            <p class="total">Общо: {{cbOwedAmountTotal}}$</p>
         </span>
         <span class="owed-by">
             <p>Жители:</p>
             <ul>
-                <li>Someone - 46$</li>
-                <li>Someone else - 46$</li>
-                <li>Nooone - 46$</li>
-                <li>Another one - 46$</li>
-                <li>Different one - 46$</li>
+                <li *ngFor="let entry of cbOwedBy">{{entry.name}} - {{entry.amount}}$</li>
             </ul>
         </span>
         <span class="buttons">
