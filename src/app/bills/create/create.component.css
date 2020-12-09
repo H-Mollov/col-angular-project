@@ -1,0 +1,96 @@
+main form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* MAIN INFORMATION */
+main form span.main-information {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* margin: 0px 60px 0px 0px;  */
+}
+
+main form span.main-information label {
+    margin: 5px 0;
+}
+
+main form span.main-information input {
+    width: 200px;
+}
+
+/* OWNER */
+
+main form span.owed-amount {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0 60px;
+}
+
+main form span.owed-amount ul {
+    display: flex;
+    padding: 0;
+    margin: 5px 0px 15px 0px;
+}
+
+main form span.owed-amount ul li {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 5px;
+}
+
+main form span.owed-amount ul li input {
+    align-self: center;
+    width: 200px;
+}
+
+main form span.owed-amount ul li label {
+    margin: 5px 0px;
+}
+
+main form span.owed-amount button {
+    align-self: center;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    margin: 20px 0 0 -20px;
+    padding: 5px 10px;
+}
+
+/* OWNED */
+
+main form span.owed-by {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0 60px;
+}
+
+main form span.owed-by ul {
+    display: flex;
+    padding: 0;
+    margin: 5px 0px 15px 0px;
+}
+
+main form span.owed-by ul li {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 5px;
+}
+
+main form span.owed-by ul li input {
+    align-self: center;
+    width: 200px;
+}
+
+main form span.owed-by ul li label {
+    margin: 5px 0px;
+}
+
+main form span.owed-by button {
+    align-self: center;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    margin: 20px 0 0 -20px;
+    padding: 5px 10px;
+}
