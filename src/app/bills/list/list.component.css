@@ -52,6 +52,11 @@ main section.month-description {
     text-align: center;
 }
 
+main section.month-description>p {
+    margin: 15px 0;
+    font-style: italic;
+}
+
 main section.month-description>h4 {
     margin: 10px 10px 0 10px;
     padding: 10px 0 10px 0;
@@ -66,6 +71,7 @@ main section.month-description>h4 {
 main section.month-description ul {
     padding: 0px;
     text-align: center;
+    margin: 0;
 }
 
 main section.month-description ul li {

@@ -1,24 +1,25 @@
 <main>
     <section class="month-selector">
         <ul>
-            <li><a>January</a></li>
-            <li><a>February</a></li>
-            <li><a>March</a></li>
-            <li><a>April</a></li>
-            <li><a>May</a></li>
-            <li><a>June</a></li>
-            <li><a>July</a></li>
-            <li><a>August</a></li>
-            <li><a>September</a></li>
-            <li><a>October</a></li>
-            <li><a>November</a></li>
-            <li><a>December</a></li>
+            <li (click)="showBillsByMonth(1)"><a>January</a></li>
+            <li (click)="showBillsByMonth(2)"><a>February</a></li>
+            <li (click)="showBillsByMonth(3)"><a>March</a></li>
+            <li (click)="showBillsByMonth(4)"><a>April</a></li>
+            <li (click)="showBillsByMonth(5)"><a>May</a></li>
+            <li (click)="showBillsByMonth(6)"><a>June</a></li>
+            <li (click)="showBillsByMonth(7)"><a>July</a></li>
+            <li (click)="showBillsByMonth(8)"><a>August</a></li>
+            <li (click)="showBillsByMonth(9)"><a>September</a></li>
+            <li (click)="showBillsByMonth(10)"><a>October</a></li>
+            <li (click)="showBillsByMonth(11)"><a>November</a></li>
+            <li (click)="showBillsByMonth(12)"><a>December</a></li>
         </ul>
     </section>
     <section class="month-description">
         <h4>Bills</h4>
+        <p *ngIf="currentMonthBills.length === 0">No bills for this month yet.</p>
         <ul>
-            <li *ngFor="let bill of allBills" (click)="showBillDescription(bill.objectId)">
+            <li *ngFor="let bill of currentMonthBills" (click)="showBillDescription(bill.objectId)">
                 <p>{{bill.name}}</p>
                 <p>{{bill.owedAmountTOTAL}}$</p>
             </li>
@@ -49,8 +50,8 @@
             </ul>
         </span>
         <span class="buttons">
-            <button>Edit</button>
-            <button>Delete</button>
+            <button (click)="editBillById()">Edit</button>
+            <button (click)="deleteBillById()">Delete</button>
         </span>
     </section>
 </main>
