@@ -28,7 +28,6 @@ export class ListComponent implements OnInit {
     "objectId": ""
   };
   cbOwedAmount: any;
-  cbOwedAmountTotal: number = 0;
   cbOwedBy: any;
 
   constructor(
@@ -44,10 +43,7 @@ export class ListComponent implements OnInit {
       this.allBillsTotalAmount = 0;
 
       this.currentMonthBills.forEach((bill) => {
-        JSON.parse(bill.owedAmount).forEach((entry) => {
-          bill.owedAmountTOTAL += Number(entry.amount);
-          this.allBillsTotalAmount += Number(entry.amount);
-        })
+        this.allBillsTotalAmount += bill.owedAmountTOTAL;
       })
     });
   }
@@ -57,9 +53,6 @@ export class ListComponent implements OnInit {
     this.currentBill = this.allBills.find((el) => el.objectId === id);
     this.cbOwedAmount = JSON.parse(this.currentBill.owedAmount);
 
-    this.cbOwedAmountTotal = 0;
-    this.cbOwedAmount.forEach((entry) => this.cbOwedAmountTotal += Number(entry.amount));
-
     this.cbOwedBy = JSON.parse(this.currentBill.owedBy);
   }
 
@@ -68,12 +61,8 @@ export class ListComponent implements OnInit {
     this.allBillsTotalAmount = 0;
 
     this.currentMonthBills.forEach((bill) => {
-      JSON.parse(bill.owedAmount).forEach((entry) => {
-        bill.owedAmountTOTAL += Number(entry.amount);
-        this.allBillsTotalAmount += Number(entry.amount);
-      })
+      this.allBillsTotalAmount += bill.owedAmountTOTAL;
     })
-
   }
 
   editBillById(): void {

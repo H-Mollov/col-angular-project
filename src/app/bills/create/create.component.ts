@@ -33,12 +33,15 @@ export class CreateComponent implements OnInit {
     const owedAmount = [];
     const owedByAmount = [];
 
+    let owedAmountTOTAL = 0;
+
     for (let i = 0; i < ownerNameKeys.length; i++) {
       const objOwed = {
         name: billData[ownerNameKeys[i]],
         amount: billData[ownerAmountKeys[i]]
       }
 
+      owedAmountTOTAL += Number(billData[ownerAmountKeys[i]]);
       owedAmount.push(objOwed);
     }
 
@@ -59,7 +62,8 @@ export class CreateComponent implements OnInit {
       institution: billData.institution,
       institutionDescription: billData.institutionDescription,
       owedAmount: JSON.stringify(owedAmount),
-      owedBy: JSON.stringify(owedByAmount)
+      owedBy: JSON.stringify(owedByAmount),
+      owedAmountTOTAL: owedAmountTOTAL
     }
 
     this.billService.createNewBill(formatedBillData).subscribe(

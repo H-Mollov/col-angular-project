@@ -41,7 +41,7 @@
             <ul>
                 <li *ngFor="let entry of cbOwedAmount">{{entry.name}} - {{entry.amount}}$</li>
             </ul>
-            <p class="total">Общо: {{cbOwedAmountTotal}}$</p>
+            <p class="total">Общо: {{currentBill.owedAmountTOTAL}}$</p>
         </span>
         <span class="owed-by">
             <p>Жители:</p>
