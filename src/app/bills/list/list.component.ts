@@ -15,19 +15,14 @@ export class ListComponent implements OnInit {
   allBills: any;
   allBillsTotalAmount: number = 0;
   currentBill = {
-    "created": 1607514562000,
     "owedAmountTOTAL": 0,
-    "ownerId": null,
-    "institution": "Софийска Вода",
-    "owedAmount": "[{\"name\": \"Софийска Вода\", \"amount\": \"34,56\"}]",
-    "month": 11,
-    "owedBy": "[{name: 'Пешо', amount: '0'}, {name: 'Гошо', amount: '0'}, {name: 'Сашо', amount: '0'}, {name: 'Стамат', amount: '0'}]",
-    "name": "Студена Вода",
-    "___class": "bills",
-    "owebBy": null,
-    "updated": 1607539272000,
-    "objectId": "39C3D8CB-40F7-453D-AFA9-79BA7A857871",
-    "institutionDescription": "Клиентски № 123 456"
+    "institution": "",
+    "owedAmount": "",
+    "month": 0,
+    "owedBy": "",
+    "name": "",
+    "owebBy": "",
+    "institutionDescription": ""
   };
   cbOwedAmount: any;
   cbOwedAmountTotal: number = 0;

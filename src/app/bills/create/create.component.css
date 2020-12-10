@@ -94,3 +94,11 @@ main form span.owed-by button {
     margin: 20px 0 0 -20px;
     padding: 5px 10px;
 }
+
+/* FORM BUTTONS */
+
+main form span.form-buttons button {
+    border-radius: 5px;
+    padding: 3px 20px;
+    margin: 10px 20px;
+}
