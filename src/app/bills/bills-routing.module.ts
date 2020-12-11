@@ -23,6 +23,10 @@ const routes: Routes = [
         component: CreateComponent
     },
     {
+        path: 'bills/edit/:id',
+        component: CreateComponent
+    },
+    {
         path: 'bills/pay',
         component: PayBillsComponent
     }

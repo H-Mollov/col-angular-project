@@ -60,4 +60,15 @@ export class AuthService {
         })
       )
   }
+
+  updateUser(body: any): Observable<any> {
+    const url = `${this.apiUrl}users/${this.currentUser.objectId}`;
+
+    return this.http.put(url, body, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'user-token': this._currentUser.value['user-token']
+      })
+    }).pipe(
+      tap((user: any) => this._currentUser.next(user)))}
 }

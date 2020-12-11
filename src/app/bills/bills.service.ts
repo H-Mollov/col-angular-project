@@ -29,12 +29,12 @@ export class BillsService {
         "Content-Type": "application/json",
         "user-token": this.currentUser['user-token']
       })
-    }:{
+    } : {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
       })
     };
-    
+
 
 
   createNewBill(billData: any): Observable<any> {

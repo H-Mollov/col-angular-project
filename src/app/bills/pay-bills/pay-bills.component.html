@@ -1,1 +1,14 @@
-<p>pay-bills works!</p>
+<main>
+    <p *ngIf="currentUserBills.length !== 0">Hello {{currentUser.name}}, these are your current bills awaiting payment:</p>
+    <p *ngIf="currentUserBills.length === 0">Hello {{currentUser.name}}, currently you dont have any unpaid bills! :)</p>
+    <form *ngIf="currentUserBills.length !== 0" #f="ngForm" (ngSubmit)="formHandler(f.value)">
+        <span class="bill" *ngFor="let bill of currentUserBills; let i = index">
+            <input #bill{{i}}="ngModel" ngModel type="checkbox" name="bill-{{i}}" id="bill-{{i}}">
+            <label for="bill-{{i}}">{{bill.name}} - {{bill.amount}}$</label>
+        </span>
+        <span class="buttons">
+            <button>Payed!</button>
+            <!-- <button>Cancel</button> -->
+        </span>
+    </form>
+</main>
