@@ -6,30 +6,39 @@
             <label for="institution">Institution:</label>
             <input #institution="ngModel" ngModel type="text" id="institution" name="institution">
             <label for="institutionDescription">Description:</label>
-            <input #institutionDescription="ngModel" ngModel type="text" id="institutionDescription" name="institutionDescription">
+            <input #institutionDescription="ngModel" ngModel type="text" id="institutionDescription"
+                name="institutionDescription">
         </span>
-        <span class="owed-amount">
-            <ul>
-                <li *ngFor="let owner of owners; let i = index">
-                    <label for="ownerName{{i}}">Owner:</label>
-                    <input #ownerName{{i}}="ngModel" ngModel type="text" name="ownerName{{i}}" id="ownerName{{i}}">
-                    <label for="ownerAmount{{i}}">Amount:</label>
-                    <input #ownerAmount{{i}}="ngModel" ngModel type="number" name="ownerAmount{{i}}" id="ownerAmount{{i}}">
-                </li>
-            </ul>
-            <button type="button" (click)="addMoreOwnersHandler()">Add more</button>
-        </span>
-        <span class="owed-by">
-            <ul>
-                <li *ngFor="let payer of payers; let i = index">
-                    <label for="payerName{{i}}">Payed by:</label>
-                    <input #payerName{{i}}="ngModel" ngModel type="text" name="payerName{{i}}" id="payerName{{i}}">
-                    <label for="ownedAmount{{i}}">Amount:</label>
-                    <input #ownedAmount{{i}}="ngModel" ngModel type="number" name="ownedAmount{{i}}" id="ownedAmount{{i}}">
-                </li>
-            </ul>
-            <button type="button" (click)="addMorePayersHandlers()">Add more</button>
-        </span>
+        <div class="owed-amount-wrapper">
+            <span class="owed-amount">
+                <ul>
+                    <li *ngFor="let owner of owners; let i = index">
+                        <label for="ownerName{{i}}">Owner:</label>
+                        <input #ownerName{{i}}="ngModel" ngModel type="text" name="ownerName{{i}}" id="ownerName{{i}}">
+                        <label for="ownerAmount{{i}}">Amount:</label>
+                        <input #ownerAmount{{i}}="ngModel" ngModel type="number" name="ownerAmount{{i}}"
+                            id="ownerAmount{{i}}">
+                    </li>
+                </ul>
+                <button type="button" (click)="addMoreOwnersHandler()">Add more</button>
+            </span>
+            <button type="button" (click)="removeLastOwnerHandler()">Remove Last Owner</button>
+        </div>
+        <div class="owed-by-wrapper">
+            <span class="owed-by">
+                <ul>
+                    <li *ngFor="let payer of payers; let i = index">
+                        <label for="payerName{{i}}">Payed by:</label>
+                        <input #payerName{{i}}="ngModel" ngModel type="text" name="payerName{{i}}" id="payerName{{i}}">
+                        <label for="ownedAmount{{i}}">Amount:</label>
+                        <input #ownedAmount{{i}}="ngModel" ngModel type="number" name="ownedAmount{{i}}"
+                            id="ownedAmount{{i}}">
+                    </li>
+                </ul>
+                <button type="button" (click)="addMorePayersHandlers()">Add more</button>
+            </span>
+            <button type="button" (click)="removeLastPayerHandler()">Remove Last Payer</button>
+        </div>
         <span class="form-buttons">
             <button>Submit</button>
             <button routerLink="/bills/list">Cancel</button>

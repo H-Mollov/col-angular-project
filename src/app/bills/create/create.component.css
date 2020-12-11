@@ -5,6 +5,7 @@ main form {
 }
 
 /* MAIN INFORMATION */
+
 main form span.main-information {
     align-self: center;
     display: flex;
@@ -23,76 +24,86 @@ main form span.main-information input {
 
 /* OWNER */
 
-main form span.owed-amount {
+main form div.owed-amount-wrapper span.owed-amount {
     display: flex;
     justify-content: center;
     margin: 0 0 0 60px;
 }
 
-main form span.owed-amount ul {
+main form div.owed-amount-wrapper span.owed-amount ul {
     display: flex;
     padding: 0;
     margin: 5px 0px 15px 0px;
 }
 
-main form span.owed-amount ul li {
+main form div.owed-amount-wrapper span.owed-amount ul li {
     display: flex;
     flex-direction: column;
     margin: 0px 5px;
 }
 
-main form span.owed-amount ul li input {
+main form div.owed-amount-wrapper span.owed-amount ul li input {
     align-self: center;
     width: 200px;
 }
 
-main form span.owed-amount ul li label {
+main form div.owed-amount-wrapper span.owed-amount ul li label {
     margin: 5px 0px;
 }
 
-main form span.owed-amount button {
+main form div.owed-amount-wrapper span.owed-amount button {
     align-self: center;
     border-radius: 5px;
     transform: rotate(-90deg);
     margin: 20px 0 0 -20px;
     padding: 5px 10px;
+}
+
+main form div.owed-amount-wrapper>button {
+    border-radius: 5px;
+    padding: 2px 20px;
 }
 
 /* OWNED */
 
-main form span.owed-by {
+main form div.owed-by-wrapper span.owed-by {
     display: flex;
     justify-content: center;
     margin: 0 0 0 60px;
 }
 
-main form span.owed-by ul {
+main form div.owed-by-wrapper span.owed-by ul {
     display: flex;
     padding: 0;
     margin: 5px 0px 15px 0px;
 }
 
-main form span.owed-by ul li {
+main form div.owed-by-wrapper span.owed-by ul li {
     display: flex;
     flex-direction: column;
     margin: 0px 5px;
 }
 
-main form span.owed-by ul li input {
+main form div.owed-by-wrapper span.owed-by ul li input {
     align-self: center;
     width: 200px;
 }
 
-main form span.owed-by ul li label {
+main form div.owed-by-wrapper span.owed-by ul li label {
     margin: 5px 0px;
 }
 
-main form span.owed-by button {
+main form div.owed-by-wrapper span.owed-by button {
     align-self: center;
     border-radius: 5px;
     transform: rotate(-90deg);
     margin: 20px 0 0 -20px;
     padding: 5px 10px;
+}
+
+main form div.owed-by-wrapper>button {
+    border-radius: 5px;
+    padding: 2px 20px;
 }
 
 /* FORM BUTTONS */

@@ -85,11 +85,19 @@ export class CreateComponent implements OnInit {
     })
   }
 
+  removeLastOwnerHandler(): void {
+    this.owners.pop();
+  }
+
   addMorePayersHandlers(): void {
     this.payers.push({
       name: "",
       amount: ""
     })
+  }
+
+  removeLastPayerHandler(): void {
+    this.payers.pop()
   }
 
   consoleFormHandler(billData: any): void {
