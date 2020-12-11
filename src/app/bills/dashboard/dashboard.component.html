@@ -21,7 +21,7 @@
             </span>
             <span class="bills">
                 <ul>
-                    <li *ngFor="let bill of user.bills">{{bill.name}} - {{bill.amount}}$</li>
+                    <li *ngFor="let bill of user.bills" [ngClass]="{'isPaid' : bill.paid}">{{bill.name}} - {{bill.amount}}$</li>
                 </ul>
             </span>
         </div>

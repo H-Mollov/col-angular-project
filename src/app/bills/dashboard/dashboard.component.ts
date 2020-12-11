@@ -32,28 +32,32 @@ export class DashboardComponent implements OnInit {
         this.currentMonthBillsTotalAmount += bill.owedAmountTOTAL;
 
         const billPayers = JSON.parse(bill.owedBy);
+        const alreadyPaid = JSON.parse(bill.paidBy);
 
-      billPayers.forEach((payer) => {
+        billPayers.forEach((payer) => {
 
-        const index = this.currentUsersList.indexOf(payer.name);
+          const index = this.currentUsersList.indexOf(payer.name);
+          const hasPaidTheBill = alreadyPaid.includes(payer.name);
 
-        if (index === -1) {
-          this.currentUsersList.push(payer.name);
-          this.currentUsersBillInformation.push({
-            name: payer.name,
-            bills: [{
+          if (index === -1) {
+            this.currentUsersList.push(payer.name);
+            this.currentUsersBillInformation.push({
+              name: payer.name,
+              bills: [{
+                name: bill.name,
+                amount: payer.amount,
+                paid: hasPaidTheBill
+              }]
+            })
+          } else {
+            const currentPayer = this.currentUsersBillInformation[index];
+            currentPayer.bills.push({
               name: bill.name,
-              amount: payer.amount
-            }]
-          })
-        } else {
-          const currentPayer = this.currentUsersBillInformation[index];
-          currentPayer.bills.push({
-            name: bill.name,
-            amount: payer.amount
-          })
-        }
-      })
+              amount: payer.amount,
+              paid: hasPaidTheBill
+            })
+          }
+        })
       })
     });
   }

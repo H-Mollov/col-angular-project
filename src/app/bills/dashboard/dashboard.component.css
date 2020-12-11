@@ -103,7 +103,12 @@ main section.individual div.user span.bills ul li {
     color: firebrick;
 }
 
-main section.individual div.user span.bills ul li:hover {
+main section.individual div.user span.bills ul li.isPaid {
     color: green;
     text-decoration: line-through;
 }
+
+/* main section.individual div.user span.bills ul li:hover {
+    color: green;
+    text-decoration: line-through;
+} */

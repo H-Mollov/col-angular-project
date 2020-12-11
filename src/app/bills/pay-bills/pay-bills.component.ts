@@ -31,22 +31,23 @@ export class PayBillsComponent implements OnInit {
       this.allBills = allBills;
       const currentMonth = new Date().getUTCMonth();
 
-      if (this.currentUser.payedBills === null) {
+      if (this.currentUser.paidBills === null) {
         this.currentUserPaidBills = [];
       } else {
-        this.currentUserPaidBills = JSON.parse(this.currentUser.payedBills);
+        this.currentUserPaidBills = JSON.parse(this.currentUser.paidBills);
       }
 
       this.currentMonthBills = this.allBills.filter((bills) => bills.month === currentMonth && !this.currentUserPaidBills.includes(bills.objectId));
 
-      this.currentMonthBills.forEach((bill) => { //Parsing each bills, payers and filtering the ones for the current user only.
+      this.currentMonthBills.forEach((bill) => { //Parsing each bill's payers and filtering the ones for the current user only.
         const currentUserBill = JSON.parse(bill.owedBy).filter((entry) => entry.name === this.currentUser.name);
 
         if (currentUserBill.length !== 0) {
           this.currentUserBills.push({
             name: bill.name,
             amount: currentUserBill[0].amount,
-            id: bill.objectId
+            id: bill.objectId,
+            paidBy: bill.paidBy
           })
         }
       })
@@ -60,13 +61,25 @@ export class PayBillsComponent implements OnInit {
       let checkedBill = formDataValuesArray[i];
 
       if (checkedBill === true) {
+        const updatedBill = JSON.parse(this.currentUserBills[i].paidBy);
+        updatedBill.push(this.currentUser.name);
+        this.billsService.updateBillById(this.currentUserBills[i].id, { "paidBy" : JSON.stringify(updatedBill)}).subscribe();
+
         this.paidUserBills.push(this.currentUserBills[i].id);
         this.currentUserBills.splice(i, 1);
       }
     }
 
-    const body = { "payedBills": JSON.stringify(this.paidUserBills) }
+    let updatedPaidBills;
 
-    this.user.updateUser(body).subscribe()
+    if (this.currentUser.paidBills === null) {
+      updatedPaidBills = this.paidUserBills;
+    } else {
+      updatedPaidBills = JSON.parse(this.currentUser.paidBills).concat(this.paidUserBills);
+    }
+
+    const body = { "paidBills": JSON.stringify(updatedPaidBills) };
+
+    this.user.updateUser(body).subscribe();
   }
 }
