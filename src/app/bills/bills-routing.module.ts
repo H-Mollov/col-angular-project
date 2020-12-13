@@ -3,6 +3,7 @@ import { CreateComponent } from './create/create.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListComponent } from './list/list.component';
 import { PayBillsComponent } from './pay-bills/pay-bills.component';
+import { AuthenticateGuard } from '../core/guards/authenticate.guard';
 
 const routes: Routes = [
     {
@@ -12,23 +13,28 @@ const routes: Routes = [
     },
     {
         path: 'bills/dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthenticateGuard]
     },
     {
         path: 'bills/list',
-        component: ListComponent
+        component: ListComponent,
+        canActivate: [AuthenticateGuard]
     },
     {
         path: 'bills/create',
-        component: CreateComponent
+        component: CreateComponent,
+        canActivate: [AuthenticateGuard]
     },
     {
         path: 'bills/edit/:id',
-        component: CreateComponent
+        component: CreateComponent,
+        canActivate: [AuthenticateGuard]
     },
     {
         path: 'bills/pay',
-        component: PayBillsComponent
+        component: PayBillsComponent,
+        canActivate: [AuthenticateGuard]
     }
 ]
 

@@ -5,6 +5,11 @@
             <input #username="ngModel" type="text" id="username" name="username" ngModel required [class.input-error]="username.touched && !!username.errors">
             <p *ngIf="username.touched && !!username.errors">Username is required!</p>
         </span>
+        <span class="username">
+            <label for="username">Name:</label>
+            <input #name="ngModel" type="text" id="name" name="name" ngModel required [class.input-error]="name.touched && !!name.errors">
+            <p *ngIf="name.touched && !!name.errors">Name is required!</p>
+        </span>
         <span class="password">
             <label for="password">Password:</label>
             <input #password="ngModel" type="password" id="password" name="password" ngModel required [class.input-error]="password.touched && !!password.errors">

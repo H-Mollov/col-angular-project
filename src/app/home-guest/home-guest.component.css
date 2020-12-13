@@ -1,0 +1,23 @@
+main h2 {
+    text-align: center;
+    margin: 20px;
+}
+
+main span.introduction p {
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+main span.features-list > p {
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+main span.features-list ul li {
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+main article.features > p {
+    text-align: center;
+}

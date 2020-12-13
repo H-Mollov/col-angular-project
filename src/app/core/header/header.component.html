@@ -4,13 +4,13 @@
     </div>
     <div class="center-container">
         <span class="top-baner">
-            <img src="../../../assets/Baner.png" alt="Some Baner should be here :?">
+            <img src="../../../assets/Baner.png" alt="Some Baner should be here :?" routerLink="/home">
         </span>
         <nav *ngIf="isLogged">
             <ul>
+                <li><a (click)="displayBillsHandler()">Bills</a></li>
                 <li><a (click)="displayFoodHandler()">Food</a></li>
                 <li><a (click)="displayDutiesHandler()">Duties</a></li>
-                <li><a (click)="displayBillsHandler()">Bills</a></li>
                 <!-- <li><a (click)="displayMenuHandler()">P&A</a></li> -->
             </ul>
         </nav>
@@ -26,7 +26,7 @@
         <span class="user-authentication">
             <a routerLink="/user/login" *ngIf="!isLogged">Login</a>
             <a routerLink="/user/register" *ngIf="!isLogged">Register</a>
-            <a *ngIf="isLogged" (click)="logOutHandler()">-Logout-</a>
+            <a *ngIf="isLogged" (click)="logOutHandler()">Logout</a>
         </span>
     </div>
 </header>
@@ -45,7 +45,7 @@
     <ul class="sub-menu-bills" [style]="displayBillsMenu">
         <li><a routerLink="/bills/dashboard">Dashboard</a></li>
         <li><a routerLink="/bills/list">List</a></li>
-        <li><a routerLink="/bills/pay">Checklist</a></li>
+        <li><a routerLink="/bills/pay">Pay Bills</a></li>
     </ul>
     <!-- <ul class="sub-menu-pna" [style]="displayMenu">
         <li><a routerLink="/bills/dashboard">Dashboard</a></li>
@@ -53,3 +53,7 @@
         <li><a routerLink="/bills/penalties">Penalties</a></li>
     </ul> -->
 </div>
+
+<span class="error" *ngIf="errorMessage">
+    <p>{{errorMessage}}</p>
+</span>

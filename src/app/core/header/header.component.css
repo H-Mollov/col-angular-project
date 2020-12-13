@@ -44,6 +44,10 @@ div.center-container span.top-baner {
     justify-content: center;
 }
 
+div.center-container span.top-baner:hover {
+    cursor: pointer;
+}
+
 div.center-container span.top-baner img {
     height: 100px;
 }
@@ -113,6 +117,7 @@ div.profile-container span.user-authentication a {
 
 div.profile-container span.user-authentication a:hover {
     color: blueviolet;
+    cursor: pointer;
 }
 
 /* SUB-MENU */
@@ -146,4 +151,22 @@ div.sub-menu ul li:hover {
 
 div.sub-menu ul li a {
     color: black;
+}
+
+/* ERROR MESSAGE */
+
+span.error {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+span.error p {
+    text-align: center;
+    font-style: italic;
+    font-size: 15px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 5px;
 }

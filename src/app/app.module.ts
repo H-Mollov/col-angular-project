@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeGuestComponent } from './home-guest/home-guest.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { HomeGuestComponent } from './home-guest/home-guest.component';
     
   ],
   providers: [
-
+    CookieService
   ],
   bootstrap: [
     AppComponent,

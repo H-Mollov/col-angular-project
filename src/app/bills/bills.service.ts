@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
-import { tap } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
-import { AuthService } from '../core/auth.service';
+import { CookieService } from 'ngx-cookie-service';
+import { ErrorDisplayService } from '../core/error-display.service';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,45 +16,54 @@ export class BillsService {
   apiUrl: string = environment.apiURL;
   billsUrl: string = environment.endPoint.data.bills;
 
-  currentUser = this.user.currentUser;
-
   constructor(
     private http: HttpClient,
-    private user: AuthService,
+    private cookie: CookieService,
+    private err: ErrorDisplayService
   ) { }
 
-  jsonHeaders = this.currentUser['user-token'] ?
-
-    {
+  jsonHeaders = () => {
+    return {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
-        "user-token": this.currentUser['user-token']
+        "user-token": this.cookie.get('user-token')
       })
-    } : {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json",
-      })
-    };
+    }
+  }
 
+  errorHandler(err: HttpErrorResponse) {
+    this.err.showErrorMessage(err.error.message);
+    return throwError(err);
+  }
 
 
   createNewBill(billData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}${this.billsUrl}`, billData, this.jsonHeaders);
+    return this.http.post(`${this.apiUrl}${this.billsUrl}`, billData, this.jsonHeaders()).pipe(
+      catchError((err) => this.errorHandler(err)
+      ));
   }
 
   getAllBills(): Observable<any> {
-    return this.http.get(`${this.apiUrl}${this.billsUrl}`, this.jsonHeaders);
+    return this.http.get(`${this.apiUrl}${this.billsUrl}`, this.jsonHeaders()).pipe(
+      catchError((err) => this.errorHandler(err)
+      ));;
   }
 
   getBillById(id: string): any {
-    return this.http.get(`${this.apiUrl}${this.billsUrl}/${id}`);
+    return this.http.get(`${this.apiUrl}${this.billsUrl}/${id}`).pipe(
+      catchError((err) => this.errorHandler(err)
+      ));;
   }
 
   updateBillById(id: string, billData: any) {
-    return this.http.put(`${this.apiUrl}${this.billsUrl}/${id}`, billData, this.jsonHeaders);
+    return this.http.put(`${this.apiUrl}${this.billsUrl}/${id}`, billData, this.jsonHeaders()).pipe(
+      catchError((err) => this.errorHandler(err)
+      ));;
   }
 
   deleteBillById(id: string) {
-    return this.http.delete(`${this.apiUrl}${this.billsUrl}/${id}`);
+    return this.http.delete(`${this.apiUrl}${this.billsUrl}/${id}`).pipe(
+      catchError((err) => this.errorHandler(err)
+      ));;
   }
 }

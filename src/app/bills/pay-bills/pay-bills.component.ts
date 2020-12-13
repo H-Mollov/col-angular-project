@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from 'src/app/core/auth.service';
 import { BillsService } from '../bills.service';
 
@@ -9,7 +10,11 @@ import { BillsService } from '../bills.service';
 })
 export class PayBillsComponent implements OnInit {
 
-  currentUser = this.user.currentUser;
+  currentUser = {
+    name: this.cookie.get('name'),
+    paidBills: this.cookie.get('paidBills')
+  }
+
   currentUserPaidBills: string[] | null;
 
   allBills: any;
@@ -21,7 +26,8 @@ export class PayBillsComponent implements OnInit {
 
   constructor(
     private user: AuthService,
-    private billsService: BillsService
+    private billsService: BillsService,
+    private cookie: CookieService
   ) { }
 
 
@@ -31,7 +37,7 @@ export class PayBillsComponent implements OnInit {
       this.allBills = allBills;
       const currentMonth = new Date().getUTCMonth();
 
-      if (this.currentUser.paidBills === null) {
+      if (this.currentUser.paidBills === "null") {
         this.currentUserPaidBills = [];
       } else {
         this.currentUserPaidBills = JSON.parse(this.currentUser.paidBills);
@@ -72,7 +78,7 @@ export class PayBillsComponent implements OnInit {
 
     let updatedPaidBills;
 
-    if (this.currentUser.paidBills === null) {
+    if (this.currentUser.paidBills === "null") {
       updatedPaidBills = this.paidUserBills;
     } else {
       updatedPaidBills = JSON.parse(this.currentUser.paidBills).concat(this.paidUserBills);

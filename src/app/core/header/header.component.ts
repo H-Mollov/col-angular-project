@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from '../auth.service';
+import { ErrorDisplayService } from '../error-display.service';
 
 @Component({
   selector: 'app-header',
@@ -13,13 +15,19 @@ export class HeaderComponent {
   displayDutiesMenu = "display: none";
   displayBillsMenu = "display: none";
 
+  errorHandler = this.err.errorMessage.subscribe((data) => this.errorMessage = data);
+
+  errorMessage: string;
+
   get isLogged() {
-    return this.authService.isLogged;
+    return this.cookie.get('user-token') ? true : false;
   }
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private cookie: CookieService,
+    private err: ErrorDisplayService
   ) { }
 
   logOutHandler(): void {
